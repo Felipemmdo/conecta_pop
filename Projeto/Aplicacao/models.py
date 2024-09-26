@@ -2,7 +2,7 @@ from django.db import models
 
 class Relatar(models.Model):
     titulo = models.CharField(max_length=100)
-    descricao = models.TextField(blank=True, null=True)
+    descricao = models.TextField(max_length=500, blank=True, null=True)
     problema = models.CharField(max_length=50)
     endereco = models.CharField(max_length=300)
     cidade = models.CharField(max_length=100)
