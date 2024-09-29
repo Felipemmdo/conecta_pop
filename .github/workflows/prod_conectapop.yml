@@ -28,13 +28,13 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r conecta_pop/requirements.txt
+        run: pip install -r Aplicacao/requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Cleaning testing files
         run: |
-          cd conecta_pop/
+          cd Aplicacao/
           rm db.sqlite3
           rm .env
           cd ..
@@ -44,7 +44,7 @@ jobs:
           cd Aplicacao/
           zip release.zip ./* -r
           cd ..
-          mv SEUPROJETODJANGO/release.zip .
+          mv Aplicacao/release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
