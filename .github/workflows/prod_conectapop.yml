@@ -28,20 +28,20 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r Projeto/requirements.txt
+        run: pip install -r Aplicacao/requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Cleaning testing files
         run: |
-          cd Projeto/
+          cd Aplicacao/
           rm db.sqlite3
           rm .env
           cd ..
 
       - name: Zip artifact for deployment
         run: |
-          cd Projeto/
+          cd Aplicacao/
           zip release.zip ./* -r
           cd ..
           mv Aplicacao/release.zip .
